@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DAL.Migrations
 {
     [DbContext(typeof(RestaurantDbContext))]
-    [Migration("20210715004005_init")]
-    partial class init
+    [Migration("20210717203845_inti")]
+    partial class inti
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -287,11 +287,11 @@ namespace DAL.Migrations
 
             modelBuilder.Entity("DAL.Model.reserve", b =>
                 {
-                    b.HasOne("DAL.Model.User", "usr")
+                    b.HasOne("DAL.Model.User", "user")
                         .WithMany()
                         .HasForeignKey("UserID");
 
-                    b.Navigation("usr");
+                    b.Navigation("user");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

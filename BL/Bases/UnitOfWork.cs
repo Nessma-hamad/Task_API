@@ -52,6 +52,16 @@ namespace BL.Bases
                 return meal;
             }
         }
-       
+        public ReseveRepository reseve;
+        public ReseveRepository Reseve
+        {
+            get
+            {
+                if (reseve == null)
+                    reseve = new ReseveRepository(EC_DbContext);
+                return reseve;
+            }
+        }
+
     }
 }

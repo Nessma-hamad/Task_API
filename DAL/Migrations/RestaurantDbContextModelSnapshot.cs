@@ -285,11 +285,11 @@ namespace DAL.Migrations
 
             modelBuilder.Entity("DAL.Model.reserve", b =>
                 {
-                    b.HasOne("DAL.Model.User", "usr")
+                    b.HasOne("DAL.Model.User", "user")
                         .WithMany()
                         .HasForeignKey("UserID");
 
-                    b.Navigation("usr");
+                    b.Navigation("user");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

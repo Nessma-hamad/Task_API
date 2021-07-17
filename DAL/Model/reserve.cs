@@ -18,7 +18,7 @@ namespace DAL.Model
 
         [ForeignKey("user")]
         public string UserID { get; set; }
-        public User usr { get; set; }
+        public User user { get; set; }
 
     }
     

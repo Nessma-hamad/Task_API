@@ -56,6 +56,7 @@ namespace Web_Api
             services.AddTransient<RoleManager<IdentityRole>>();
             services.AddTransient<AccountAppService>();
             services.AddTransient<MealAppService>();
+            services.AddTransient<ReseveAppService>();
             services.AddHttpContextAccessor();//allow me to get user information such as id
             services.AddAutoMapper(typeof(Startup));
 

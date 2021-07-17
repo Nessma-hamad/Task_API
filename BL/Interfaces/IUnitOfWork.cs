@@ -14,6 +14,7 @@ namespace BL.Interfaces
 
         AccountRepository Account { get; }
         MealRepository Meal { get; }
+        ReseveRepository Reseve { get; }
 
     }
 }
