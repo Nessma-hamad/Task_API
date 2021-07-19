@@ -41,6 +41,10 @@ namespace BL.Repository
         {
             return GetFirstOrDefault(b => b.ID == id);
         }
+        public reserve GetreserveByUserId(string userid)
+        {
+            return GetFirstOrDefault(b => b.UserID == userid);
+        }
     }
 }
 

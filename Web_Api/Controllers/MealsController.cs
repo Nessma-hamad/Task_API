@@ -39,7 +39,7 @@ namespace Web_Api.Controllers
 
             return brands;
         }
-        //[Authorize(Roles = "Admin")]
+       // [Authorize(Roles = "Admin")]
         [HttpPut("{id}")]
         public IActionResult PutMeal(int id, MealDto MealDto)
         {
@@ -54,7 +54,7 @@ namespace Web_Api.Controllers
                 return BadRequest(ex.Message);
             }
         }
-        //[Authorize(Roles = "Admin")]
+       // [Authorize(Roles = "Admin")]
         [HttpPost]
         public ActionResult<MealDto> PostMeal(MealDto MealDto)
         {
@@ -62,7 +62,7 @@ namespace Web_Api.Controllers
             return CreatedAtAction("GetMeals", MealDto);
 
         }
-       // [Authorize(Roles = "Admin")]
+      // [Authorize(Roles = "Admin")]
         [HttpDelete("{id}")]
         public IActionResult DeleteMeal(int id)
         {

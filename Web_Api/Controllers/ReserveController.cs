@@ -39,7 +39,19 @@ namespace Web_Api.Controllers
 
             return brands;
         }
-        //[Authorize(Roles = "Admin")]
+        [HttpGet("GetReserveByUserID")]
+        public ActionResult<ReserveDto> GetReserveByUserId(string userID)
+        {
+            var brands = _reserveAppService.GetReserveByUserID(userID);
+
+            if (brands == null)
+            {
+                return NotFound();
+            }
+
+            return brands;
+        }
+
         [HttpPut("{id}")]
         public IActionResult PutReserve(int id, ReserveDto ReserveDto)
         {
@@ -54,10 +66,11 @@ namespace Web_Api.Controllers
                 return BadRequest(ex.Message);
             }
         }
-        //[Authorize(Roles = "Admin")]
+        
         [HttpPost]
         public ActionResult<ReserveDto> PostReserve(ReserveDto ReserveDto)
         {
+            
            if( _reserveAppService.CreateReserve(ReserveDto))
             {
                 return Ok();
@@ -69,7 +82,7 @@ namespace Web_Api.Controllers
            
 
         }
-        // [Authorize(Roles = "Admin")]
+       
         [HttpDelete("{id}")]
         public IActionResult DeleteReserve(int id)
         {

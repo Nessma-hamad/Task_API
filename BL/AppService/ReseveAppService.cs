@@ -26,6 +26,11 @@ namespace BL.AppService
                 throw new ArgumentNullException();
             return mapper.Map<ReserveDto>(TheUnitOfWork.Reseve.GetreserveById(id));
         }
+        public ReserveDto GetReserveByUserID(string userid)
+        {
+           
+            return mapper.Map<ReserveDto>(TheUnitOfWork.Reseve.GetreserveByUserId(userid));
+        }
         public bool CreateReserve(ReserveDto ReserveDto)
         {
             if (ReserveDto == null)

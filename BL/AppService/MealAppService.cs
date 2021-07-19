@@ -65,8 +65,11 @@ namespace BL.AppService
         }
         public bool UpdateMeal(MealDto mealDto, int id)
         {
-            var meal = TheUnitOfWork.Meal.GetMealById(id);
+            var meal =TheUnitOfWork.Meal.GetMealById(id);
             meal.Name = mealDto.Name;
+            var reserve = TheUnitOfWork.Reseve.GetreserveById(mealDto.reserveID);
+            reserve.meals.Add(meal);
+            TheUnitOfWork.Reseve.Update(reserve);
             TheUnitOfWork.Meal.UpdateMeal(meal);
             TheUnitOfWork.Commit();
 

@@ -9,6 +9,10 @@ namespace DAL.Model
 {
     public class reserve
     {
+        public reserve()
+        {
+            meals = new List<meal>();
+        }
         public int ID { get; set; }
         public int Number_of_guests { get; set; }
         public DateTime Date { get; set; }
